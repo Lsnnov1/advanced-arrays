@@ -9,7 +9,7 @@ Examples:
 function doubleValues(arr){
     let newArr = [];
     arr.forEach(function(val) {
-      newArr += (val * 2);
+      newArr.push(val * 2);
     });
     return newArr;
     
@@ -27,9 +27,10 @@ function onlyEvenValues(arr){
     let newArr = [];
   arr.forEach(function(val) {
     if (val % 2 === 0) {
-      newArr +=(val);
+      newArr.push(val);
     }
   });
+  return newArr;
 }
 
 /*
@@ -41,10 +42,11 @@ Examples:
 
 */
 function showFirstAndLast(arr){
-    let newArr = [];
+  let newArr = [];
   arr.forEach(function(val) {
-    newArr += (val[0] + val[val.length - 1]);
+    newArr.push(val[0] + val[val.length - 1]);
   });
+  return newArr
 }
 
 /*
@@ -57,9 +59,11 @@ Examples:
 
 */
 function addKeyAndValue(arr,key,value){
-    arr.forEach(function(val) {
-        val[key] = value;
-      });
+  arr.forEach(function(val) {
+    val[key] = value;
+  });
+  return arr;
+
 }
 
 /*
@@ -73,20 +77,21 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-    let splitArr = str.split("");
-    let obj = {};
-    const vowels = "aeiou";
-  
-    splitArr.forEach(function(letter) {
-      let lowerCasedLetter = letter.toLowerCase()
-      if (vowels.indexOf(lowerCasedLetter) !== -1) {
-        if (obj[lowerCasedLetter]) {
-          obj[lowerCasedLetter]++;
-        } else {
-          obj[lowerCasedLetter] = 1;
-        }
+  let splitArr = str.split("");
+  let obj = {};
+  const vowels = "aeiou";
+
+  splitArr.forEach(function(letter) {
+    let lowerCasedLetter = letter.toLowerCase()
+    if (vowels.indexOf(lowerCasedLetter) !== -1) {
+      if (obj[lowerCasedLetter]) {
+        obj[lowerCasedLetter]++;
+      } else {
+        obj[lowerCasedLetter] = 1;
       }
-    });
+    }
+  });
+  return obj;
 }
 
 /*
